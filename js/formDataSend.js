@@ -19,13 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            const r = new XMLHttpRequest(),
-                  message = document.createElement("div");
+            const  message = document.createElement("div");
 
             message.classList.add("message");
-
-            // r.open("POST", "server.php");
-            // r.setRequestHeader("Content-type", 'mulitpart/form-data');
 
             const formData = new FormData(form);
 
@@ -36,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
 
-            // r.send(json);
 
             fetch("server.php", {
                 method: "POST",

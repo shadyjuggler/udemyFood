@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function modalAppears () {
         modal.classList.add("show")
         modal.classList.remove("hide");
-        clearInterval(modalTimer)
+        // clearInterval(modalTimer)
     }
 
     function modalHides () {
