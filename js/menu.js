@@ -34,9 +34,9 @@ const firstMenu = new Menu("img/tabs/vegy.jpg", `Меню "Фитнес"`, `Ме
       thirdMenu = new Menu("img/tabs/vegy.jpg", `Меню "Постное"`, `Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.`, "430", "грн/день", "menu__field");
       
 
-firstMenu.appear();
-secondMenu.appear();
-thirdMenu.appear();
+// firstMenu.appear();
+// secondMenu.appear();
+// thirdMenu.appear();
 
 // fetch('https://jsonplaceholder.typicode.com/posts', {
 //     method: "POST",

@@ -7,3 +7,7 @@ fetch("http://localhost:3000/menu")
     .catch(() => {
         console.error("Cannot access db.json")
     })
+
+fetch("http://localhost:3000/menu")
+    .then(r => r.json())
+    .then(r => console.log(r[1].descr))
