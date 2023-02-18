@@ -1,6 +1,7 @@
 // Slider
 
-const wrapper = document.querySelector(".offer__slider-wrapper"),
+const slider = document.querySelector(".offer__slider"),
+      wrapper = document.querySelector(".offer__slider-wrapper"),
       inner = document.querySelector(".offer__slider-inner"),
       prev = document.querySelector(".offer__slider-prev"),
       next = document.querySelector(".offer__slider-next"),
@@ -9,8 +10,6 @@ const wrapper = document.querySelector(".offer__slider-wrapper"),
       width = window.getComputedStyle(wrapper).width.slice(0, -2),
       imgs = ["pepper.jpg", "food-12.jpg", "olive-oil.jpg", "paprika.jpg"];
 
-console.log(inner)
-
     let offset = 0;
     let id = 1;
 
@@ -18,6 +17,8 @@ console.log(inner)
     inner.style.width = `${100 * imgs.length}%`
     wrapper.style.overflow = "hidden";
     inner.style.transition = "0.5s"
+
+    
     
     function displayCurrentSlideId () {
         if (id > imgs.length) {
@@ -51,6 +52,8 @@ console.log(inner)
         
         id++;
         displayCurrentSlideId ()
+
+        addActiveDot (id - 1)
     }) 
 
 
@@ -67,86 +70,76 @@ console.log(inner)
         
         id--
         displayCurrentSlideId ()
+
+        addActiveDot (id - 1)
     }) 
 
 
+// Navigation
 
+const dotWrapper = document.createElement("div");
+    dotWrapper.classList.add("carousel-indicators");
+    slider.style.position = "relative"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let id = 0;
-
-// function showSlide (id, img) {
-
-//     wrapper.innerHTML = ""; // clears wrapper
-
-//     displayCurrentSlideId();
-
-//     const slide = document.createElement("div");
-
-//     slide.innerHTML = `
-//         <div class="offer__slide" id="${id}">
-//             <img src="img/slider/${img}" alt="pepper">
-//         </div>
-//     `;
+function createDot (amount) {
     
-//     wrapper.append(slide);
-// }
+    for (let i = 0; i < amount; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
 
+        dotWrapper.append(dot);
+    }
 
+    slider.append(dotWrapper);
+}
 
-// function displayCurrentSlideId () {
-//     if (imgs.length >= 10) {
-//         currentId.textContent = `${id + 1}`;
-//         totalAmount.textContent = `${imgs.length}`;
-//     } else {
-//         currentId.textContent = `0${id + 1}`;
-//         totalAmount.textContent = `0${imgs.length}`;
-//     }
+createDot(imgs.length);
+
+const dots = dotWrapper.children;
+console.log(dots)
+
+function addActiveDot (i) {
     
-// }
 
-// prev.addEventListener("click", (e) => {
-//     e.preventDefault();
+    for (const dot of dots) {
+        dot.classList.remove("dot-active");
+    }
 
-//     id--;
-//     checkId()
+    dots[i].classList.add("dot-active");
+}
 
-//     showSlide(id, imgs[id]);
-// })
+addActiveDot (id - 1)
 
-// next.addEventListener("click", (e) => {
-//     e.preventDefault();
 
-//     id++
-//     checkId()
 
-//     showSlide(id, imgs[id]);
-// })
 
-// showSlide(0, imgs[0])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
