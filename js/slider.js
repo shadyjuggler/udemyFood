@@ -95,18 +95,17 @@ function createDot (amount) {
 
 createDot(imgs.length);
 
-const dots = dotWrapper.children;
-console.log(dots)
+const dots = [...dotWrapper.children];
 
 function addActiveDot (i) {
-    
 
-    for (const dot of dots) {
+    dots.forEach(dot => {
         dot.classList.remove("dot-active");
-    }
+    })
 
     dots[i].classList.add("dot-active");
 }
+
 
 addActiveDot (id - 1)
 
