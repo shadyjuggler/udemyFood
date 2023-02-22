@@ -2,7 +2,6 @@
   "name": "food",
   "version": "1.0.0",
   "description": "",
-  "type" : "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +17,9 @@
   },
   "homepage": "https://github.com/shadyjuggler/udemyFood#readme",
   "devDependencies": {
-    "json-server": "^0.17.1"
+    "json-server": "^0.17.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "xml-js": "^1.6.11"

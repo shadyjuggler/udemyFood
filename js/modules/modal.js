@@ -1,13 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-
+function modal () {
+    
     const btns = [...document.querySelectorAll("[data-modal]")],
           modal = document.querySelector(".modal"),
           closeBtn = modal.querySelector(".modal__close"),
           form = modal.querySelector("form"),
           inputs = [...modal.querySelectorAll("input")];
         //   modalTimer = setTimeout(modalAppears, 10000);
-
-    
 
     btns.map(btn => btn.addEventListener("click", e => {
         const target = e.target;
@@ -29,9 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
-
-   
-
     function modalAppears () {
         modal.classList.add("show")
         modal.classList.remove("hide");
@@ -42,4 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.add("hide")
         modal.classList.remove("show");
     }
-})
+}
+
+module.exports = modal;

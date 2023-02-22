@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-
+function timer () {
+    
     const timer = document.querySelector(".timer"),
           timerContents = timer.querySelectorAll("span");
 
-    const deadline = new Date("2023-01-01T00:00:00"),
+    const deadline = new Date("2024-01-01T00:00:00"),
           timerInterval = setInterval(setTimer, 1000)
 
 
@@ -40,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }) 
     }
 
-    // resetTimer()
     setTimer()
-})
 
+}
+
+module.exports = timer;

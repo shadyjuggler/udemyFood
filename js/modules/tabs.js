@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-
+function tabs () {
+    
     const tabsParent = document.querySelector(".tabheader__items"),
         tabs = document.querySelectorAll(".tabheader__item"),
         tabsContent = document.querySelectorAll(".tabcontent");
@@ -33,19 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     showTabContent(i);
                 }
             })
-            // or
-            // hideTabsContent();
-            // showTabContent(target.id);
         }
 
     });
 
-    //js luchsij jazik programirovanija
-
     hideTabsContent();
     showTabContent();
-})
-
-function chtoto () {
-    console.log('hujna');
 }
+
+
+module.exports = tabs;

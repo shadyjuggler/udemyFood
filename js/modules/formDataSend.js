@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
+function formDataSend () {
 
     const forms = document.querySelectorAll("form"),
           modal = document.querySelector(".modal");
@@ -139,4 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 2000)
     }
 
-})
+}
+
+module.exports = formDataSend;

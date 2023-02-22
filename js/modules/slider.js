@@ -1,6 +1,5 @@
-// Slider
-
-const slider = document.querySelector(".offer__slider"),
+function slider () {
+    const slider = document.querySelector(".offer__slider"),
       wrapper = document.querySelector(".offer__slider-wrapper"),
       inner = document.querySelector(".offer__slider-inner"),
       prev = document.querySelector(".offer__slider-prev"),
@@ -106,39 +105,8 @@ function addActiveDot (i) {
     dots[i].classList.add("dot-active");
 }
 
-
 addActiveDot (id - 1)
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = slider;
