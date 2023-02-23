@@ -136,4 +136,4 @@ function calculator () {
     calculate()     
 }
 
-module.exports = calculator;
+export default calculator;

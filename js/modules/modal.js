@@ -1,11 +1,8 @@
-function modal () {
+function modal (modalSelector, modalOpenBtnSlector, modalCloseBtnSelector) {
     
-    const btns = [...document.querySelectorAll("[data-modal]")],
-          modal = document.querySelector(".modal"),
-          closeBtn = modal.querySelector(".modal__close"),
-          form = modal.querySelector("form"),
-          inputs = [...modal.querySelectorAll("input")];
-        //   modalTimer = setTimeout(modalAppears, 10000);
+    const btns = [...document.querySelectorAll(modalOpenBtnSlector)],
+          modal = document.querySelector(modalSelector),
+          modalTimer = setTimeout(modalAppears, 10000);
 
     btns.map(btn => btn.addEventListener("click", e => {
         const target = e.target;
@@ -20,7 +17,7 @@ function modal () {
 
         const target = e.target;
 
-        if (target.classList.contains("modal__close") || target === modal) {
+        if (target.classList.contains(modalCloseBtnSelector) || target === modal) {
             modalHides()
             thanksWindowTimeout.clearInterval();
         }
@@ -30,7 +27,7 @@ function modal () {
     function modalAppears () {
         modal.classList.add("show")
         modal.classList.remove("hide");
-        // clearInterval(modalTimer)
+        clearInterval(modalTimer)
     }
 
     function modalHides () {
@@ -39,4 +36,4 @@ function modal () {
     }
 }
 
-module.exports = modal;
+export default modal;

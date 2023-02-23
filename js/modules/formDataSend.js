@@ -120,7 +120,7 @@ function formDataSend () {
 
         modal.append(thanksWindow);
         
-        const thanksWindowTimeout = setTimeout(() => {
+        let thanksWindowTimeout = setTimeout(() => {
             thanksWindow.remove();
             prevModalDialog.classList.add("show");
             prevModalDialog.classList.remove("hide");
@@ -140,4 +140,4 @@ function formDataSend () {
 
 }
 
-module.exports = formDataSend;
+export default formDataSend;
